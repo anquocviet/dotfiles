@@ -104,9 +104,9 @@ local battery = require("widget.battery")
 local cpu = require("widget.cpu")
 local memory = require("widget.memory")
 local clock = require("widget.clock")
--- Barcontainer :
 
-local function barcontainer(widget)
+-- Barcontainer :
+local function barcontainer(widget, color_widget)
     local container = wibox.widget
       {
         widget,
@@ -125,7 +125,7 @@ local function barcontainer(widget)
             right = dpi(8),
             widget = wibox.container.margin
         },
-        bg = colors.container,
+        bg = color_widget,
         shape = function(cr,w,h) gears.shape.rounded_rect(cr,w,h,8) end,
         widget = wibox.container.background
     }
@@ -155,7 +155,7 @@ end
 
 --awful.placement.top(s.mywibar, { margins = beautiful.useless_gap })
 s.mywibar:struts({ 
-	top = dpi(30),
+	top = dpi(26),
 	--bottom = dpi(10),
 })
 
@@ -164,20 +164,22 @@ s.mywibar:setup {
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
             --mylauncher,
-            barcontainer(s.mytaglist),
+            barcontainer(s.mytaglist, colors.brightblack),
             s.mypromptbox,
+            
         },
 	s.mytasklist, -- Middle widget
 
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             --mykeyboardlayout,
-	    barcontainer(memory),
-	    barcontainer(cpu),
-	    barcontainer(battery),
-            barcontainer(clock),
-            barcontainer(wibox.widget.systray()),
-            barcontainer(s.mylayoutbox),
+            barcontainer(memory, colors.brightyellow),
+            barcontainer(cpu, colors.brightmagenta),
+            barcontainer(battery, colors.brightgreen),
+            barcontainer(clock, colors.brightblue),
+            barcontainer(wibox.widget.systray(), colors.black),
+            barcontainer(s.mylayoutbox, colors.brightblack),
+            spacing = dpi(4)
         },
     }
 

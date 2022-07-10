@@ -1,5 +1,3 @@
--- If LuaRocks is installed, make sure that packages installed through it are
--- found (e.g. lgi). If LuaRocks is not installed, do nothing.
 pcall(require, "luarocks.loader")
 
 -- Standard awesome library
@@ -14,51 +12,19 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
--- Enable hotkeys help widget for VIM and other apps
--- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 
--- {{{ Error handling
--- Check if awesome encountered an error during startup and fell back to
--- another config (This code will only ever execute for the fallback config)
-if awesome.startup_errors then
-    naughty.notify({ preset = naughty.config.presets.critical,
-                     title = "Oops, there were errors during startup!",
-                     text = awesome.startup_errors })
-end
 
--- Handle runtime errors after startup
-do
-    local in_error = false
-    awesome.connect_signal("debug::error", function (err)
-        -- Make sure we don't go into an endless error loop
-        if in_error then return end
-        in_error = true
-
-        naughty.notify({ preset = naughty.config.presets.critical,
-                         title = "Oops, an error happened!",
-                         text = tostring(err) })
-        in_error = false
-    end)
-end
--- }}}
-
--- {{{ Variable definitions
--- Choose your theme
 local theme_path = string.format("%s/.config/awesome/themes/theme.lua", os.getenv("HOME"))
 beautiful.init(theme_path)
 beautiful.useless_gap = 5
 
--- }}}
 
 require("configuration.layouts")
 require("configuration.keys")
 
 -- Menubar
 require("ui.menu")
-
--- Keyboard map indicator and switcher
---mykeyboardlayout = awful.widget.keyboardlayout()
 
 -- Wibar on top screen
 require("ui.bar")

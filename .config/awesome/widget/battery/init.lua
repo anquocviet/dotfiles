@@ -4,7 +4,7 @@
 theme = {}
 
 theme.font 						= "FiraCode Nerd Font 10"
-theme.iconfont 						= "FiraCode NF 12"
+theme.iconfont 						= "FiraCode Nerd Font 12"
 
 -- requirements
 -- ~~~~~~~~~~~~
@@ -70,19 +70,19 @@ watch('acpi -i', 10, function(_, stdout)
     if status == 'Charging' then
         --battery_icon.text = ''
         if math.floor(charge) <= 20 then
-            battery_icon.text = ''
+            battery_icon.text = ' '
         elseif math.floor(charge) <= 30 then
-            battery_icon.text = ''
+            battery_icon.text = ' '
         elseif math.floor(charge) <= 40 then
-            battery_icon.text = ''
+            battery_icon.text = ' '
         elseif math.floor(charge) <= 60 then
-            battery_icon.text = ''
+            battery_icon.text = ' '
         elseif math.floor(charge) <= 80 then
-            battery_icon.text = ''
+            battery_icon.text = ' '
         elseif math.floor(charge) <= 90 then
-            battery_icon.text = ''
+            battery_icon.text = ' '
         elseif math.floor(charge) <= 100 then
-            battery_icon.text = ''
+            battery_icon.text = ' '
         end
     elseif status == 'Full' then
         battery_icon.text = ''
@@ -115,12 +115,12 @@ end)
 return wibox.widget {
     wibox.widget{
         battery_icon,
-        fg = colors.blue,
+        fg = colors.black,
         widget = wibox.container.background
     },
     wibox.widget{
         percentage, 
-        fg = colors.blue,
+        fg = colors.black,
         widget = wibox.container.background
     },
     spacing = dpi(4),

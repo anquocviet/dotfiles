@@ -1,7 +1,3 @@
----------------------------
--- Default awesome theme --
----------------------------
-
 local theme_assets = require("beautiful.theme_assets")
 local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
@@ -19,8 +15,8 @@ local lip 			    					= layout_icon_path
 colors = {}
 -- Dark colors
 colors.black 									= "#1A2026"
-colors.red 									= "#a54242"
-colors.green 									= "#8c9440"
+colors.red 									    = "#a54242"
+colors.green 									= "#28682E"
 colors.yellow 									= "#de935f"
 colors.blue 									= "#548D91"
 colors.magenta 									= "#85678f"
@@ -29,7 +25,7 @@ colors.white 									= "#acacac"
 -- Bright colors
 colors.brightblack 								= "#262F38"
 colors.brightred 								= "#cc6666"
-colors.brightgreen 								= "#b5bd68"
+colors.brightgreen 								= "#68bd6d"
 colors.brightyellow 							= "#f0c674"
 colors.brightblue 								= "#81a2be"
 colors.brightmagenta 							= "#b294bb"
@@ -163,4 +159,3 @@ theme.icon_theme = nil
 
 return theme
 
--- vim: filetype=lua:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:textwidth=80
