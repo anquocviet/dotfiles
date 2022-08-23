@@ -1,0 +1,85 @@
+.monaco-workbench
+  .part.editor
+  > .content
+  .editor-group-container
+  > .title
+  .tabs-container
+  > .tab[aria-selected="true"]
+  > .tab-border-top-container {
+  display: block;
+  background-size: 400% 400%;
+  background-image: linear-gradient(
+    -45deg,
+    #c850c0,
+    #ffb86c,
+    #ff2ced,
+    #fc6c8f,
+    #4158d0,
+    #20e3b2,
+    #2cccff,
+    #ffcc70
+  );
+  animation: gradient 5s ease alternate 3;
+
+  height: 3px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 4px;
+}
+
+.monaco-editor .cursors-layer .cursor {
+  background: linear-gradient(to top, #e43a15, #e65245);
+}
+
+.monaco-editor .line-numbers {
+  color: #22c1c3;
+}
+
+.monaco-editor .line-numbers.active-line-number {
+  color: #fcb045;
+}
+
+.monaco-workbench
+  .activitybar
+  > .content
+  :not(.monaco-menu)
+  > .monaco-action-bar
+  .action-item.checked
+  .active-item-indicator:before {
+  border-left-color: #32ccbc;
+  border-width: 3px;
+}
+
+.monaco-workbench
+  .activitybar
+  > .content
+  :not(.monaco-menu)
+  > .monaco-action-bar
+  .badge
+  .badge-content {
+  background: linear-gradient(to top, #348f50, #56b4d3);
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.monaco-workbench
+  .part.editor
+  > .content
+  .editor-group-container
+  > .title
+  .tabs-container
+  > .tab.active.tab-border-bottom
+  > .tab-border-bottom-container {
+  height: 0;
+}
