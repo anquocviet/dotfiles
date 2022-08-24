@@ -139,7 +139,10 @@ globalkeys = gears.table.join(
         awful.util.spawn("pactl set-source-mute 1 toggle", false) end),
    -- Brightness Keys
     awful.key({ }, "XF86MonBrightnessUp", function () awful.util.spawn("brightnessctl set 10%+") end),
-    awful.key({ }, "XF86MonBrightnessDown", function () awful.util.spawn("brightnessctl set 10%-") end)
+    awful.key({ }, "XF86MonBrightnessDown", function () awful.util.spawn("brightnessctl set 10%-") end),
+
+    -- Clipboard
+    awful.key({ modkey }, "v", function () awful.util.spawn("rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'") end)
 )
 
 clientkeys = gears.table.join(
